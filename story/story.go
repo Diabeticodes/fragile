@@ -9,7 +9,7 @@ import (
 )
 
 // ShowIntroStory displays the game's introduction story
-func ShowIntroStory() {
+func bartenderDialog() {
 	// Clear the screen before showing the story
 	ui.ClearScreen()
 
@@ -22,6 +22,7 @@ func ShowIntroStory() {
 		"Then one night, something dreadful happened to the peaceful city...",
 		"The joyful noise faded into silence, and the alleys became quiet",
 		"The alleys are empty, the silence uncomfortable, and the avenues lined with fog..."
+		
 
 	}
 

@@ -1,0 +1,243 @@
+{
+	"Amaretto Sour": {
+		"ingredients": [
+			{ "name": "Amaretto", "amount": 45 },
+			{ "name": "Lemon Juice", "amount": 30 },
+			{ "name": "Simple Syrup", "amount": 15 },
+			{ "name": "Egg White", "amount": 1 },
+			{ "name": "Bitters", "amount": 1 }
+		]
+	},
+	"Aperol Spritz": {
+		"ingredients": [
+			{ "name": "Aperol", "amount": 90 },
+			{ "name": "Prosecco", "amount": 90 },
+			{ "name": "Soda Water", "amount": 30 },
+			{ "name": "Orange Slice", "amount": 1 }
+		]
+	},
+	"Aviation": {
+		"ingredients": [
+			{ "name": "Gin", "amount": 60 },
+			{ "name": "Cherry Liqueur", "amount": 15 },
+			{ "name": "Violette Liqueur", "amount": 15 },
+			{ "name": "Lemon Juice", "amount": 30 }
+		]
+	},
+	"Corpse Reviver #1": {
+		"ingredients": [
+			{ "name": "Cognac", "amount": 30 },
+			{ "name": "Apple Brandy", "amount": 30 },
+			{ "name": "Sweet Vermouth", "amount": 30 }
+		]
+	},
+	"Corpse Reviver #2": {
+		"ingredients": [
+			{ "name": "Gin", "amount": 22 },
+			{ "name": "Orange Liqueur", "amount": 22 },
+			{ "name": "Lillet Blanc", "amount": 22 },
+			{ "name": "Lemon Juice", "amount": 22 },
+			{ "name": "Absinthe", "amount": 1 }
+		]
+	},
+	"Cosmopolitan": {
+		"ingredients": [
+			{ "name": "Vodka", "amount": 45 },
+			{ "name": "Cointreau", "amount": 15 },
+			{ "name": "Cranberry Juice", "amount": 30 },
+			{ "name": "Lime Juice", "amount": 15 }
+		]
+	},
+	"Daiquiri": {
+		"ingredients": [
+			{ "name": "Rum", "amount": 60 },
+			{ "name": "Lime Juice", "amount": 30 },
+			{ "name": "Simple Syrup", "amount": 15 }
+		]
+	},
+	"Dirty Martini": {
+		"ingredients": [
+			{ "name": "Gin", "amount": 75 },
+			{ "name": "Vermouth", "amount": 15 },
+			{ "name": "Olive", "amount": 1 }
+		]
+	},
+	"Dry Martini": {
+		"ingredients": [
+			{ "name": "Gin", "amount": 60 },
+			{ "name": "Vermouth", "amount": 10 },
+			{ "name": "Lemon", "amount": 1 }
+		]
+	},
+	"Espresso Martini": {
+		"ingredients": [
+			{ "name": "Vodka", "amount": 50 },
+			{ "name": "Coffee Liqueur", "amount": 30 },
+			{ "name": "Espresso", "amount": 30 },
+			{ "name": "Simple Syrup", "amount": 15 },
+			{ "name": "Coffee Beans", "amount": 3 }
+		]
+	},
+	"Gin and Tonic": {
+		"ingredients": [
+			{ "name": "Gin", "amount": 50 },
+			{ "name": "Tonic Water", "amount": 150 },
+			{ "name": "Lime Wedge", "amount": 1 }
+		]
+	},
+	"Gin Fizz": {
+		"ingredients": [
+			{ "name": "Gin", "amount": 45 },
+			{ "name": "Lemon Juice", "amount": 30 },
+			{ "name": "Simple Syrup", "amount": 15 },
+			{ "name": "Soda Water", "amount": 60 },
+			{ "name": "Egg White", "amount": 1 }
+		]
+	},
+	"Long Island Iced Tea": {
+		"ingredients": [
+			{ "name": "Vodka", "amount": 15 },
+			{ "name": "Tequila", "amount": 15 },
+			{ "name": "Rum", "amount": 15 },
+			{ "name": "Gin", "amount": 15 },
+			{ "name": "Orange Liqueur", "amount": 15 },
+			{ "name": "Lemon Juice", "amount": 30 },
+			{ "name": "Simple Syrup", "amount": 15 },
+			{ "name": "Cola", "amount": 30 }
+		]
+	},
+	"Manhattan": {
+		"ingredients": [
+			{ "name": "Whiskey", "amount": 60 },
+			{ "name": "Vermouth", "amount": 30 },
+			{ "name": "Bitters", "amount": 1 },
+			{ "name": "Cherry", "amount": 1 }
+		]
+	},
+	"Mitch Martini": {
+		"ingredients": [
+			{ "name": "Gin", "amount": 60 },
+			{ "name": "Vermouth", "amount": 15 },
+			{ "name": "Olive", "amount": 1 },
+			{ "name": "Lemon", "amount": 1 }
+		]
+	},
+	"Mojito": {
+		"ingredients": [
+			{ "name": "Rum", "amount": 60 },
+			{ "name": "Lime Juice", "amount": 30 },
+			{ "name": "Simple Syrup", "amount": 30 },
+			{ "name": "Soda Water", "amount": 60 },
+			{ "name": "Mint", "amount": 10 },
+			{ "name": "Lime", "amount": 1 }
+		]
+	},
+	"Moscow Mule": {
+		"ingredients": [
+			{ "name": "Vodka", "amount": 45 },
+			{ "name": "Lime Juice", "amount": 30 },
+			{ "name": "Ginger Beer", "amount": 120 },
+			{ "name": "Lime", "amount": 1 }
+		]
+	},
+	"Negroni": {
+		"ingredients": [
+			{ "name": "Gin", "amount": 30 },
+			{ "name": "Campari", "amount": 30 },
+			{ "name": "Vermouth", "amount": 30 },
+			{ "name": "Orange Twist", "amount": 1 }
+		]
+	},
+	"Old Fashioned": {
+		"ingredients": [
+			{ "name": "Bourbon", "amount": 60 },
+			{ "name": "Sugar Cube", "amount": 1 },
+			{ "name": "Bitters", "amount": 2 },
+			{ "name": "Orange", "amount": 1 },
+			{ "name": "Cherry", "amount": 1 }
+		]
+	},
+	"Piña Colada": {
+		"ingredients": [
+			{ "name": "Rum", "amount": 60 },
+			{ "name": "Coconut", "amount": 60 },
+			{ "name": "Pineapple", "amount": 90 },
+			{ "name": "Cherry", "amount": 1 }
+		]
+	},
+	"Rum and Coke": {
+		"ingredients": [
+			{ "name": "Rum", "amount": 60 },
+			{ "name": "Cola", "amount": 120 },
+			{ "name": "Lime", "amount": 1 }
+		]
+	},
+	"Sazerac": {
+		"ingredients": [
+			{ "name": "Whiskey", "amount": 60 },
+			{ "name": "Sugar Cube", "amount": 1 },
+			{ "name": "Bitters", "amount": 3 },
+			{ "name": "Absinthe", "amount": 1 },
+			{ "name": "Lemon", "amount": 1 }
+		]
+	},
+	"Sidecar": {
+		"ingredients": [
+			{ "name": "Cognac", "amount": 60 },
+			{ "name": "Orange Liqueur", "amount": 120 },
+			{ "name": "Lemon Juice", "amount": 15 },
+			{ "name": "Orange", "amount": 1 }
+		]
+	},
+	"Tequila Sunrise": {
+		"ingredients": [
+			{ "name": "Tequila", "amount": 60 },
+			{ "name": "Orange Juice", "amount": 120 },
+			{ "name": "Grenadine", "amount": 15 },
+			{ "name": "Orange", "amount": 1 },
+			{ "name": "Cherry", "amount": 1 }
+		]
+	},
+	"The London Fog": {
+		"ingredients": [
+			{ "name": "Tea", "amount": 240 },
+			{ "name": "Vanilla Syrup", "amount": 15 },
+			{ "name": "Milk", "amount": 60 },
+			{ "name": "Vanilla", "amount": 1 }
+		]
+	},
+	"The Michael": {
+		"ingredients": [
+			{ "name": "Whiskey", "amount": 60 },
+			{ "name": "Maple Syrup", "amount": 15 },
+			{ "name": "Bitters", "amount": 2 },
+			{ "name": "Orange", "amount": 1 }
+		]
+	},
+	"Tom Collins": {
+		"ingredients": [
+			{ "name": "Gin", "amount": 60 },
+			{ "name": "Lemon Juice", "amount": 30 },
+			{ "name": "Simple Syrup", "amount": 15 },
+			{ "name": "Soda Water", "amount": 90 },
+			{ "name": "Lemon", "amount": 1 },
+			{ "name": "Cherry", "amount": 1 }
+		]
+	},
+	"Vodka Martini": {
+		"ingredients": [
+			{ "name": "Vodka", "amount": 75 },
+			{ "name": "Vermouth", "amount": 15 },
+			{ "name": "Lemon", "amount": 1 }
+		]
+	},
+	"Whiskey Sour": {
+		"ingredients": [
+			{ "name": "Whiskey", "amount": 60 },
+			{ "name": "Lemon Juice", "amount": 30 },
+			{ "name": "Simple Syrup", "amount": 15 },
+			{ "name": "Egg White", "amount": 1 },
+			{ "name": "Bitters", "amount": 1 }
+		]
+	}
+}

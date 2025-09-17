@@ -5,63 +5,104 @@ import (
 	"strings"
 
 	"github.com/michaelmastrucci/text-rpg/colors"
-	"github.com/michaelmastrucci/text-rpg/story"
+	"github.com/michaelmastrucci/text-rpg/dialogue"
 	"github.com/michaelmastrucci/text-rpg/ui"
 	"github.com/michaelmastrucci/text-rpg/utils"
 )
 
 type Player struct {
-	Name     string
-	Level    int
-	XP       int
-	Recipes  []string
+	Name      string
+	Level     int
+	XP        int
+	Recipes   []string
 	Inventory []string
 }
 
+var gameDialogues *dialogue.GameDialogues
+
+func init() {
+	// Initialize all game dialogues
+	gameDialogues = dialogue.InitializeDialogues()
+}
+
 func showGameIntro() {
-	// Show the story first
-	story.ShowIntroStory()
+	gameTitle := colors.Colorize("Fragile", "title")
 	
-	// Then show the game title and introduction
+	// Clear screen and show title
 	ui.ClearScreen()
-	gameTitle := colors.Colorize("Edge of the Table", "title")
-    fmt.Println(gameTitle)
-    
-    // Welcome messages with typewriter effect and colors
-    ui.TypeWriter("\nHey there and Welcome to-", 50, colors.GetColorPrinter("bartender"))
-    utils.Delay(1)
-    ui.TypeWriter("Oh sorry, I thought ya were a customer...yer the newbie, eh?", 50, colors.GetColorPrinter("bartender"))
-    utils.Delay(2)
+	fmt.Println(gameTitle)
+
+	// Get the intro scene
+	introScene, exists := gameDialogues.GetScene("intro")
+	if !exists {
+		// Fallback in case the scene is not found
+		ui.TypeWriter("Welcome to Fragile!", 50, colors.GetColorPrinter("narrator"))
+		return
+	}
+
+	// Collect all dialogue text
+	var allText strings.Builder
+	for _, d := range introScene.Dialogues {
+		// Add speaker name if available
+		if d.Speaker != nil {
+			allText.WriteString(d.Speaker.Name + ":\n")
+		}
+		allText.WriteString(d.Text + "\n\n")
+	}
+
+	// Wrap all text in a single border
+	formattedText := utils.WrapTextInBorder(allText.String(), 70)
+	
+	// Print the formatted text with border
+	fmt.Println(formattedText)
 }
 
 func startNewGame() {
-    ui.TypeWriter("Erm...Whats yer name again?", 50, colors.GetColorPrinter("bartender"))
-    utils.Delay(1)
-    
-    // Get player name with colored prompt
-    colors.GetColorPrinter("input").Print("Please enter your name: ")
-    var name string
-    fmt.Scan(&name)
+	// Get the name prompt scene
+	nameScene, exists := gameDialogues.GetScene("name_prompt")
+	if exists && len(nameScene.Dialogues) > 0 {
+		// Show the first line of the name prompt
+		d := nameScene.Dialogues[0]
+		ui.TypeWriter(d.Text, 50, colors.GetColorPrinter("bartender"))
+		utils.Delay(1)
+	}
 
-    player := Player{
-        Name: name,
-        Level: 1,
-        XP: 0,
-        Recipes: []string{"Beer", "Wine", "Whiskey", "Vodka"},
-    }
+	// Get player name with colored prompt
+	colors.GetColorPrinter("input").Print("Please enter your name: ")
+	var name string
+	fmt.Scan(&name)
+
+	player := Player{
+		Name:     name,
+		Level:    1,
+		XP:       0,
+		Recipes:  []string{"Beer", "Wine", "Whiskey", "Vodka"},
+		Inventory: []string{},
+	}
     
     // Continue with the rest of your game...
-    ui.TypeWriter(fmt.Sprintf("\nSo yer, %s? Nice ta meet ya.", player.Name), 50, colors.GetColorPrinter("bartender"))
-    ui.TypeWriter("Before ya jump behind the counter 'n start throwin' my booze everywhere, lemme lay some ground rules.", 50, colors.GetColorPrinter("bartender"))
-    ui.TypeWriter("Since yer new, I gotta start ya at level "+fmt.Sprint(player.Level)+" since ya got "+fmt.Sprint(player.XP)+" XP.", 50, colors.GetColorPrinter("bartender"))
-    ui.TypeWriter("It's real simple, see. Customer's come in fer drinks. It's YER job to make 'em and make 'em RIGHT.", 50, colors.GetColorPrinter("bartender"))
-    ui.TypeWriter("Ya can make "+fmt.Sprint(len(player.Recipes))+" different drinks...", 50, colors.GetColorPrinter("bartender"))
-    ui.TypeWriter(strings.Join(player.Recipes, ", "), 50, colors.GetColorPrinter("bartender"))
-    ui.TypeWriter("Well i's a bit less ammo than I hoped you'd be packin'...but I got a feelin' you'll pick things up pretty quick.", 50, colors.GetColorPrinter("bartender"))
+    // Get the new game scene
+    newGameScene, exists := gameDialogues.GetScene("new_game")
+    if exists {
+        // Display each line of dialogue in the scene
+        for _, d := range newGameScene.Dialogues {
+            ui.TypeWriter(d.Text, 50, colors.GetColorPrinter("bartender"))
+            utils.Delay(1)
+        }
+    } else {
+        // Fallback in case the scene is not found
+        ui.TypeWriter(fmt.Sprintf("\nSo yer, %s? Nice ta meet ya.", player.Name), 50, colors.GetColorPrinter("bartender"))
+        ui.TypeWriter("Before ya jump behind the counter 'n start throwin' my booze everywhere, lemme lay some ground rules.", 50, colors.GetColorPrinter("bartender"))
+        ui.TypeWriter("Since yer new, I gotta start ya at level "+fmt.Sprint(player.Level)+" since ya got "+fmt.Sprint(player.XP)+" XP.", 50, colors.GetColorPrinter("bartender"))
+        ui.TypeWriter("It's real simple, see. Customer's come in fer drinks. It's YER job to make 'em and make 'em RIGHT.", 50, colors.GetColorPrinter("bartender"))
+        ui.TypeWriter("Ya can make "+fmt.Sprint(len(player.Recipes))+" different drinks...", 50, colors.GetColorPrinter("bartender"))
+        ui.TypeWriter(strings.Join(player.Recipes, ", "), 50, colors.GetColorPrinter("bartender"))
+        ui.TypeWriter("Well i's a bit less ammo than I hoped you'd be packin'...but I got a feelin' you'll pick things up pretty quick.", 50, colors.GetColorPrinter("bartender"))
 
-    ui.TypeWriter("The recipe book is under the counter. Open it any time by pressing 'R' to make sure ya don't mess up an order, Yeah?", 50, colors.GetColorPrinter("bartender"))
-    ui.TypeWriter("The ingredients are behind you on the wall. You can check supplies by pressing 'I' to make sure YA DON'T MESS UP AN ORDER. YEAH?", 50, colors.GetColorPrinter("bartender"))
-    ui.TypeWriter("The bar is in front of you. You can check the bar by pressing 'B'", 50, colors.GetColorPrinter("bartender"))
+        ui.TypeWriter("The recipe book is under the counter. Open it any time by pressing 'R' to make sure ya don't mess up an order, Yeah?", 50, colors.GetColorPrinter("bartender"))
+        ui.TypeWriter("The ingredients are behind you on the wall. You can check supplies by pressing 'I' to make sure YA DON'T MESS UP AN ORDER. YEAH?", 50, colors.GetColorPrinter("bartender"))
+        ui.TypeWriter("The bar is in front of you. You can check the bar by pressing 'B'", 50, colors.GetColorPrinter("bartender"))
+    }
 }
 
 func showOptions() {

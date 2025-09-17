@@ -1,0 +1,55 @@
+// Title appears on game Start
+
+  FFFFFFF        RRRRRR             A             GGGGGG         IIIII         L             EEEEE
+  F              R     R           A A            G                I           L             E
+  F              R     R          A   A           G   GGG          I           L             E
+  FFFR           R  RRR          A     A          G     G          I           L             EEE         
+  F              R  R           A       A         G     G          I           L             E
+  F              R   R         AAAAAAAAAAA         GGGGG         IIIII         LLLL          EEEEE
+
+
+// Menu options (selected with arrows and enter)
+
+> Start
+> Continue
+> Options
+
+
+// Top bar to indicate current in game location and in-game clock (24 hours)
+--------------------------------------------------------------------------------------------------
+|  Edge of the Table - Bar                                                                00:00  |
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+|  Market Square                                                                          13:27  |
+--------------------------------------------------------------------------------------------------
+
+
+// Menu that shows recipes and inventory to make drinks
+------------------- Recipes -------------------  ------------------  Inventory ------------------
+|    Carajillo                                |  |  Barley [3]                                  |
+|     Barley [3]                              |  |  Corn [10]                                   |         
+|     Hops [1]                                |  |  Grain [5]                                   |
+|     Yeast [1]                               |  |  Hops [1]                                    |
+|                                             |  |                                              |
+|    Wine                                     |  |                                              |
+|     Grapes [10]                             |  |                                              |
+|     Yeast [1]                               |  |                                              |
+|                                             |  |                                              |
+|    Whiskey                                  |  |                                              |
+|                                             |  |                                              |
+|                                             |  |                                              |
+|                                             |  |                                              |
+-----------------------------------------------  ------------------------------------------------
+
+
+// Dialogue Box. Each menu has a 2-opace padding on either side
+--------------------------------------------------------------------------------------------------
+|  Bar Owner:                                                                                    |
+|                                                                                                |
+|    "Dialogue goes here and clears after character finishes limit.                              |
+|    Text scrolls 3-4 lines if needed in a typewriter scroll effect.                             |
+|    Each character speaks with a different colored text.                                        |
+|                                                                                                |
+--------------------------------------------------------------------------------------------------
+

@@ -27,12 +27,12 @@ func ShowStartScreen() string {
 
 	// ASCII Art for "FRAGILE"
 	asciiArt := `
-	FFFFFFF  RRRRRR     A     GGGGG  IIIII   L       EEEEE
-	F        R     R   A A   G         I     L       E
-	F        R     R  A   A  G  GGG    I     L       EEEE
-	FFFR     R RRRR   AAAAA  G    G    I     L       E
-	F        R  R     A   A   G   G    I     L       E
-	F        R   R    A   A    GGGG   IIII   LLLLL   EEEEE
+	FFFFFFF  RRRRRR       A       GGGGG   IIIII   L       EEEEE
+	F        R     R     A A      G         I     L       E
+	F        R     R    A   A     G  GGG    I     L       E
+	FFFR     R  RRR    A     A    G    G    I     L       EEE
+	F        R  R     A       A   G    G    I     L       E
+	F        R   R   AAAAAAAAAAA   GGGG   IIIII   LLLLL   EEEEE
 `
 
 	// Display ASCII art in title color
@@ -40,9 +40,9 @@ func ShowStartScreen() string {
 	
 	// Menu options
 	menuOptions := []string{
-		"Start [S]",
-		"Continue [L]",
-		"Options [O]",
+		"> Start",
+		"> Continue",
+		"> Options",
 	}
 
 	// Display menu options
@@ -53,7 +53,6 @@ func ShowStartScreen() string {
 	// Get user input
 	reader := bufio.NewReader(os.Stdin)
 	for {
-		colors.GetColorPrinter("input").Print("\nEnter your choice: ")
 		input, _ := reader.ReadString('\n')
 		if len(input) > 0 {
 			switch input[0] {
