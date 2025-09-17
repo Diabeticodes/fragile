@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/michaelmastrucci/text-rpg/colors"
+	"github.com/text-rpg/colors"
 )
 
 // TypeWriter prints text with a typewriter effect using the provided color

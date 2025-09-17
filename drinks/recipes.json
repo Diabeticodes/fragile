@@ -11,31 +11,23 @@
 	"Aperol Spritz": {
 		"ingredients": [
 			{ "name": "Aperol", "amount": 90 },
-			{ "name": "Prosecco", "amount": 90 },
+			{ "name": "Wine", "amount": 90 },
 			{ "name": "Soda Water", "amount": 30 },
 			{ "name": "Orange Slice", "amount": 1 }
-		]
-	},
-	"Aviation": {
-		"ingredients": [
-			{ "name": "Gin", "amount": 60 },
-			{ "name": "Cherry Liqueur", "amount": 15 },
-			{ "name": "Violette Liqueur", "amount": 15 },
-			{ "name": "Lemon Juice", "amount": 30 }
 		]
 	},
 	"Corpse Reviver #1": {
 		"ingredients": [
 			{ "name": "Cognac", "amount": 30 },
-			{ "name": "Apple Brandy", "amount": 30 },
-			{ "name": "Sweet Vermouth", "amount": 30 }
+			{ "name": "Brandy", "amount": 30 },
+			{ "name": "Vermouth", "amount": 30 }
 		]
 	},
 	"Corpse Reviver #2": {
 		"ingredients": [
 			{ "name": "Gin", "amount": 22 },
 			{ "name": "Orange Liqueur", "amount": 22 },
-			{ "name": "Lillet Blanc", "amount": 22 },
+			{ "name": "Wine", "amount": 22 },
 			{ "name": "Lemon Juice", "amount": 22 },
 			{ "name": "Absinthe", "amount": 1 }
 		]
@@ -62,13 +54,6 @@
 			{ "name": "Olive", "amount": 1 }
 		]
 	},
-	"Dry Martini": {
-		"ingredients": [
-			{ "name": "Gin", "amount": 60 },
-			{ "name": "Vermouth", "amount": 10 },
-			{ "name": "Lemon", "amount": 1 }
-		]
-	},
 	"Espresso Martini": {
 		"ingredients": [
 			{ "name": "Vodka", "amount": 50 },
@@ -85,15 +70,6 @@
 			{ "name": "Lime Wedge", "amount": 1 }
 		]
 	},
-	"Gin Fizz": {
-		"ingredients": [
-			{ "name": "Gin", "amount": 45 },
-			{ "name": "Lemon Juice", "amount": 30 },
-			{ "name": "Simple Syrup", "amount": 15 },
-			{ "name": "Soda Water", "amount": 60 },
-			{ "name": "Egg White", "amount": 1 }
-		]
-	},
 	"Long Island Iced Tea": {
 		"ingredients": [
 			{ "name": "Vodka", "amount": 15 },
@@ -103,7 +79,7 @@
 			{ "name": "Orange Liqueur", "amount": 15 },
 			{ "name": "Lemon Juice", "amount": 30 },
 			{ "name": "Simple Syrup", "amount": 15 },
-			{ "name": "Cola", "amount": 30 }
+			{ "name": "Tea", "amount": 30 }
 		]
 	},
 	"Manhattan": {
@@ -140,14 +116,6 @@
 			{ "name": "Lime", "amount": 1 }
 		]
 	},
-	"Negroni": {
-		"ingredients": [
-			{ "name": "Gin", "amount": 30 },
-			{ "name": "Campari", "amount": 30 },
-			{ "name": "Vermouth", "amount": 30 },
-			{ "name": "Orange Twist", "amount": 1 }
-		]
-	},
 	"Old Fashioned": {
 		"ingredients": [
 			{ "name": "Bourbon", "amount": 60 },
@@ -157,7 +125,7 @@
 			{ "name": "Cherry", "amount": 1 }
 		]
 	},
-	"Piña Colada": {
+	"Pina Colada": {
 		"ingredients": [
 			{ "name": "Rum", "amount": 60 },
 			{ "name": "Coconut", "amount": 60 },

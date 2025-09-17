@@ -3,8 +3,8 @@ package dialogue
 import (
 	"fmt"
 
-	"github.com/michaelmastrucci/text-rpg/colors"
-	"github.com/michaelmastrucci/text-rpg/utils"
+	"github.com/text-rpg/colors"
+	"github.com/text-rpg/utils"
 )
 
 // Character represents a game character with their dialogue

@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/michaelmastrucci/text-rpg/colors"
-	"github.com/michaelmastrucci/text-rpg/dialogue"
-	"github.com/michaelmastrucci/text-rpg/ui"
-	"github.com/michaelmastrucci/text-rpg/utils"
+	"github.com/text-rpg/colors"
+	"github.com/text-rpg/dialogue"
+	"github.com/text-rpg/ui"
+	"github.com/text-rpg/utils"
 )
 
 type Player struct {
@@ -20,17 +20,19 @@ type Player struct {
 
 var gameDialogues *dialogue.GameDialogues
 
+
 func init() {
+	// Attempts to set terminal to 30 rows, 98 columns
+	fmt.Print("\033[8;30;98t") 
+
 	// Initialize all game dialogues
 	gameDialogues = dialogue.InitializeDialogues()
 }
 
 func showGameIntro() {
-	gameTitle := colors.Colorize("Fragile", "title")
 	
 	// Clear screen and show title
 	ui.ClearScreen()
-	fmt.Println(gameTitle)
 
 	// Get the intro scene
 	introScene, exists := gameDialogues.GetScene("intro")
@@ -58,6 +60,7 @@ func showGameIntro() {
 }
 
 func startNewGame() {
+		ui.TopLocationBar("Edge of the Table - Bar", "00:00")
 	// Get the name prompt scene
 	nameScene, exists := gameDialogues.GetScene("name_prompt")
 	if exists && len(nameScene.Dialogues) > 0 {

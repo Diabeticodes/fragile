@@ -1,12 +1,13 @@
 package ui
 
 import (
-	"bufio"
+	"fmt"
 	"os"
 	"os/exec"
 	"runtime"
 
-	"github.com/michaelmastrucci/text-rpg/colors"
+	"github.com/eiannone/keyboard"
+	"github.com/text-rpg/colors"
 )
 
 // ClearScreen clears the terminal screen
@@ -23,49 +24,55 @@ func ClearScreen() {
 
 // ShowStartScreen displays the game's start screen with ASCII art and menu options
 func ShowStartScreen() string {
-	ClearScreen()
+		menuOptions := []string{"Start", "Continue", "Options"}
+		selected := 0
 
-	// ASCII Art for "FRAGILE"
-	asciiArt := `
-	FFFFFFF  RRRRRR       A       GGGGG   IIIII   L       EEEEE
-	F        R     R     A A      G         I     L       E
-	F        R     R    A   A     G  GGG    I     L       E
-	FFFR     R  RRR    A     A    G    G    I     L       EEE
-	F        R  R     A       A   G    G    I     L       E
-	F        R   R   AAAAAAAAAAA   GGGG   IIIII   LLLLL   EEEEE
-`
+		asciiArt := "FFFFFFF  RRRRRR       A       GGGGG   IIIII   L       EEEEE\n" +
+			"F        R     R     A A      G         I     L       E\n" +
+			"F        R     R    A   A     G  GGG    I     L       E\n" +
+			"FFFR     R  RRR    A     A    G    G    I     L       EEE\n" +
+			"F        R  R     A       A   G    G    I     L       E\n" +
+			"F        R   R   AAAAAAAAAAA   GGGG   IIIII   LLLLL   EEEEE"
 
-	// Display ASCII art in title color
-	TypeWriter(asciiArt, 0, colors.GetColorPrinter("title"))
-	
-	// Menu options
-	menuOptions := []string{
-		"> Start",
-		"> Continue",
-		"> Options",
-	}
-
-	// Display menu options
-	for _, option := range menuOptions {
-		TypeWriter(option, 20, colors.GetColorPrinter("bartender"))
-	}
-
-	// Get user input
-	reader := bufio.NewReader(os.Stdin)
-	for {
-		input, _ := reader.ReadString('\n')
-		if len(input) > 0 {
-			switch input[0] {
-			case 's', 'S':
-				return "start"
-			case 'l', 'L':
-				return "load"
-			case 'o', 'O':
-				return "options"
-			default:
-				TypeWriter("Invalid option. Please try again.", 20, colors.GetColorPrinter("system"))
-				continue
+		renderMenu := func(options []string, selected int) {
+			for i, opt := range options {
+				if i == selected {
+					colors.GetColorPrinter("bartender").Print("  > " + opt + "\n")
+				} else {
+					colors.GetColorPrinter("bartender").Print("    " + opt + "\n")
+				}
 			}
 		}
-	}
+
+		err := keyboard.Open()
+		if err != nil {
+			TypeWriter("Error initializing keyboard input.", 20, colors.GetColorPrinter("system"))
+			return ""
+		}
+		defer keyboard.Close()
+
+		for {
+			fmt.Print("\033[H")
+			colors.GetColorPrinter("title").Print(asciiArt + "\n\n")
+			renderMenu(menuOptions, selected)
+
+			_, key, err := keyboard.GetKey()
+			if err != nil {
+				continue
+			}
+			if key == keyboard.KeyArrowUp && selected > 0 {
+				selected--
+			} else if key == keyboard.KeyArrowDown && selected < len(menuOptions)-1 {
+				selected++
+			} else if key == keyboard.KeyEnter {
+				switch selected {
+				case 0:
+					return "start"
+				case 1:
+					return "load"
+				case 2:
+					return "options"
+				}
+			}
+		}
 }
